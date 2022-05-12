@@ -40,6 +40,7 @@ func productExceptOne (arrayOfInts []int) []int {
 
 
 
+
 func main () {
 	fmt.Println(findSumInArray([]int{1,2,3,4,5,6,7},7))
 	fmt.Println(productExceptOne([]int{0,1,2,3,4,5,6}))
