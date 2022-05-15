@@ -1,13 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"dcc/utilities"
+	"fmt"
+	
 )
 
+// 11/05/2022
 // Given an array of integers and a target integer k, return true if the array
 // contains two numbers which sum up to k.
-// 11/05/2022
+
 func findSumInArray (array []int, kvalue int) bool {
 
 	for _,number := range(array) {
@@ -39,9 +41,25 @@ func productExceptOne (arrayOfInts []int) []int {
 }
 
 
+// 14/05/2022
+// Given an array of integers, find the first missing positive integer in linear time and constant space.
+// In other words, find the lowest positive integer that does not exist in the array.
+// The array can contain duplicates and negative numbers as well.
+
+func missingPositive (integers []int) int {
+	min := utilities.FindMinimun(integers)
+	if min == 0 {
+		return 1
+	} else if min == 1 {
+		return 0
+	} else {
+		return min-1
+	}
+}
 
 
 func main () {
 	fmt.Println(findSumInArray([]int{1,2,3,4,5,6,7},7))
 	fmt.Println(productExceptOne([]int{0,1,2,3,4,5,6}))
+	fmt.Println(missingPositive([]int{40,3,5,-1,4,4,9}))
 }
